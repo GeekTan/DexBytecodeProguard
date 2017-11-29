@@ -207,17 +207,17 @@ class Smali_Process:
 
 def main():
 
-    parser=argparse.ArgumentParser(description=u'¶¦Ô´APP¼Ó¹Ì¶ÜÖ®DEXÎÄ¼ş»ìÏı¹¤¾ß')
-    parser.add_argument('-i',dest='apk_input_path',help=u'APKÊäÈëÂ·¾¶')
-    parser.add_argument('-idir',dest='apk_dump_dir',help=u'APK½âÑ¹Â·¾¶')
-    parser.add_argument('-mf',dest='mix_file_path',help=u'»ìÏıµ¥ÎÄ¼şÂ·¾¶')
-    parser.add_argument('-md',dest='mix_dir_path',help=u'»ìÏıµ¥Ä¿Â¼Â·¾¶')
-    parser.add_argument('-strlib',dest='strlib_json',help=u'»ìÏı¿âÂ·¾¶')
-    parser.add_argument('-d',dest='apk_decode',action='store_true',help=u'·´±àÒëAPK')
-    parser.add_argument('-b',dest='apk_build',action='store_true',help=u'ÖØ¹¹½¨APK')
-    parser.add_argument('-goto',dest='out_of_order',action='store_true',help=u'ÂÒĞò»ìÏı')
-    parser.add_argument('-insert',dest='junk_code',action='store_true',help=u'¼Ó»¨Ö¸Áî')
-    #parser.add_argument('-multi',dest='multiprocess',action='store_true',help=u'¿ªÆô×èÈûÊ½¶à½ø³Ì')
+    parser=argparse.ArgumentParser(description=u'DEXæ–‡ä»¶æ··æ·†å·¥å…·V1.0')
+    parser.add_argument('-i',dest='apk_input_path',help=u'APKè¾“å…¥è·¯å¾„')
+    parser.add_argument('-idir',dest='apk_dump_dir',help=u'APKè§£å‹è·¯å¾„')
+    parser.add_argument('-mf',dest='mix_file_path',help=u'æ··æ·†å•æ–‡ä»¶è·¯å¾„')
+    parser.add_argument('-md',dest='mix_dir_path',help=u'æ··æ·†å•ç›®å½•è·¯å¾„')
+    parser.add_argument('-strlib',dest='strlib_json',help=u'æ··æ·†åº“è·¯å¾„')
+    parser.add_argument('-d',dest='apk_decode',action='store_true',help=u'åç¼–è¯‘APK')
+    parser.add_argument('-b',dest='apk_build',action='store_true',help=u'é‡æ„å»ºAPK')
+    parser.add_argument('-goto',dest='out_of_order',action='store_true',help=u'ä¹±åºæ··æ·†')
+    parser.add_argument('-insert',dest='junk_code',action='store_true',help=u'åŠ èŠ±æŒ‡ä»¤')
+    #parser.add_argument('-multi',dest='multiprocess',action='store_true',help=u'å¼€å¯é˜»å¡å¼å¤šè¿›ç¨‹')
     args=parser.parse_args()
     '''
     def func(i):

@@ -1,0 +1,16 @@
+[
+	{
+		"String":"const/4 v1, 1\r\n const/4 v2, 0\r\n new-array v0, v1, [I\r\n aput v1, v0, v2\r\n const/16 v1, 12\r\n aput v1, v0, v2\r\n aget v1, v0, v2\r\n shr-int/lit8 v1, v1, 2\r\n aput v1, v0, v2\r\n",
+		"Register":"3",
+		"Lable":"False"
+	},
+	{	
+		"String":"const/4 v1, 1\r\n const/4 v2, 0\r\n new-array v0, v1, [I\r\n aput v1, v0, v2\r\n const/16 v1, 12\r\n aput v1, v0, v2\r\n",
+		"Register":"3",
+		"Lable":"False"
+		     
+           
+	}
+    
+              
+]

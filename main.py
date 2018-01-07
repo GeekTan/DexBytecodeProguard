@@ -217,31 +217,9 @@ def main():
     parser.add_argument('-b',dest='apk_build',action='store_true',help=u'重构建APK')
     parser.add_argument('-goto',dest='out_of_order',action='store_true',help=u'乱序混淆')
     parser.add_argument('-insert',dest='junk_code',action='store_true',help=u'加花指令')
-    #parser.add_argument('-multi',dest='multiprocess',action='store_true',help=u'开启阻塞式多进程')
+   
     args=parser.parse_args()
-    '''
-    def func(i):
-        if args.strlib_json:
-            Smali = Smali_Process(SmaliList[i], args.strlib_json)
-        else:
-            Smali = Smali_Process(SmaliList[i], os.path.join(os.getcwd(), 'StringLib.json'))
-
-        Smali.StrlibJson_read()
-        Smali.Smali_read()
-        Smali.Smali_split()
-        Smali.Smali_filter()
-        Smali.Smali_method()
-        if args.junk_code:
-            for i in xrange(Smali.methodnum):
-                Smali.Smali_Lineinsert(Smali.methodstarttuple[i], Smali.methodendtuple[i])
-
-        if args.out_of_order:
-            for i in xrange(Smali.methodnum):
-                Smali.Smali_Linegoto(Smali.methodstarttuple[i], Smali.methodendtuple[i])
-
-        Smali.Smali_group()
-        Smali.Smali_write()
-    '''
+   
     if args.apk_input_path and args.apk_dump_dir and args.apk_decode:
         apk=Apk_decode_build(args.apk_input_path,args.apk_dump_dir)
         apk.apk_decode()
@@ -278,17 +256,7 @@ def main():
         apk=Apk_decode_build(apk_dump_dir=args.mix_dir_path)
         apk.SmaliSearch()
         SmaliList=apk.SmaliList
-        '''
-        if args.multiprocess:
-            pool=multiprocessing.Pool(processes = multiprocessing.cpu_count())
-            for i in xrange(len(SmaliList)):
-                pool.apply_async(func,(i,))
-
-            pool.close()
-            pool.join()
-        '''
-
-        #else:
+    
 
         for i in xrange(len(SmaliList)):
             if args.strlib_json:
@@ -314,26 +282,11 @@ def main():
             Smali.Smali_group()
             Smali.Smali_write()
 
-def maindebug():
-    apk=Apk_decode_build(apk_dump_dir='D:\\jdread')
-    apk.SmaliSearch()
-    SmaliList = apk.SmaliList
-    for i in range(len(SmaliList)):
-        Smali = Smali_Process(SmaliList[i], os.path.join(os.getcwd(), 'StringLib.json'))
-        Smali.StrlibJson_read()
-        Smali.Smali_read()
-        Smali.Smali_split()
-        Smali.Smali_filter()
-        Smali.Smali_method()
-        for i in range(Smali.methodnum):
-            Smali.Smali_Linegoto(Smali.methodstarttuple[i], Smali.methodendtuple[i])
 
-        Smali.Smali_group()
-        Smali.Smali_write()
 
 
 if __name__=='__main__':
 
-    #maindebug()
+   
     main()
     sys.exit(0)
